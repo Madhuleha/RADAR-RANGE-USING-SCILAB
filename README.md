@@ -52,11 +52,4 @@ It is expressed as:
 ## Manual Calculation
 
 ## Result
-
-
-
-    
-
-7.If Any Errors Occur:
-    Review and correct the code.
-    Save and run it again until it executes successfully. 
+Thus, the maximum range of a radar system calculated using the Radar Range Equation is successfully verified using Scilab programming.
