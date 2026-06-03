@@ -1,68 +1,62 @@
-# RADAR-RANGE-USING-SCILAB
-Aim:
-To calculate the maximum range of a radar system using the Radar Range Equation and verify the results through Python programming.
+# Evaluation of Radar Range Using Scilab
+## Aim
+To calculate the maximum range of a radar system using the Radar Range Equation and verify the results through Scilab programming.
 
-Theory:
-The Radar Range Equation is a fundamental formula used in radar system design to determine the maximum range at which a radar can detect a target. It is given by:
+## Theory
+The Radar Range Equation is a key relationship used in radar system design to determine the maximum distance (range) at which a radar can detect a target.
 
-Formula:
-<img width="365" height="423" alt="image" src="https://github.com/user-attachments/assets/d57a8e43-a26b-4521-b36a-4c8782c4e5ec" />
+It is expressed as:
 
-Procedure:
-1.Open Scilab software on your computer.
 
-2.Create a new script file by choosing File → New → Script from the menu bar.
+## Algorithm
 
-3.Clear the Scilab environment using the commands to clear the screen and previous variables.
+1.Initialize constants:
+  λ (wavelength) = 0.03 m
+  σ (radar cross section) = 1 m²
 
-4.Define the input values required for radar range calculation, such as:
+2.Vary each parameter while keeping the others constant:
+  Pt: 0.1 → 10
+  Gt: 1 → 50
+  Pm: 1e⁻¹⁵ → 1e⁻¹⁰
 
-5.Transmitted power in watts
+3.Compute maximum range using: R_max = ((Pt * Gt² * λ² * σ) / ((4π)³ * Pm))¼
 
-6.Antenna gain (a number without units)
+4.Plot the following:
+  Pt vs Rmax
+  Gt vs Rmax
+  Pm vs Rmax
+  
+## Procedure
 
-7.Wavelength in meters (directly entered value)
+1.Refer to the Algorithm and write the Scilab code for the experiment.
 
-8.Radar cross-section in square meters
+2.Open Scilab on your system.
 
-9.Minimum detectable power in watts
+3.Create a New Editor File:
+   Go to File → New → Script.
 
-10.Use Scilab statements to perform the radar range calculation based on the given parameters.
+4.Type Your Code in the editor window.
 
-11.Display the calculated range using the display command so that the output appears in the Scilab console window.
+5.Save the File with a suitable name (e.g., radar_range.sce).
 
-12.Save the script file with an appropriate name such as “radar_range.sce”.
+6.Execute the Code:
+    Press F5 or click Execute → File with echo.
 
-13.Run the program by selecting Execute → File with Echo or by pressing the shortcut key combination.
-
-14.Observe the result displayed in the Scilab command window — it shows the maximum range of the radar in meters.
-
-15.Stop the execution of the program.
-
-Algorithm:
-1.Start the program.
-
-2.Define constants such as the speed of light and the value of pi.
-
-3.Input all radar parameters — these include the transmitted power, antenna gain, wavelength, radar cross-section, and the minimum detectable power.
-
-4.Assign a fixed wavelength value directly (do not calculate it).
-
-5.Substitute all known values of transmitted power, antenna gain, wavelength, radar cross-section, and minimum detectable power into the radar range equation.
-
-6.Perform the necessary mathematical operations in Scilab to compute the maximum radar detection range.
-
-7.Display the computed range on the screen in meters.
-
-8.End the program.
-
-Program:
+## Code
 ```
 
 ```
+## Output
 
-Output:
 
-Tabular Column:
+## Manual Calculation
 
-Result:
+## Result
+
+
+
+    
+
+7.If Any Errors Occur:
+    Review and correct the code.
+    Save and run it again until it executes successfully. 
