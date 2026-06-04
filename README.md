@@ -44,12 +44,51 @@ It is expressed as:
 
 ## Code
 ```
+clc;
+clear;
+close;
+Pt = 1000;
+Gt_dB = 30;
+Gr_dB = 30;
+Gt = 10^(Gt_dB/10);
+Gr = 10^(Gr_dB/10);
+f = 10e9;
+c = 3e8;
+lambda = c/f;
+sigma = 1;
+Pr_min = 1e-12;
+R = 1000:1000:100000;
+Pr = (Pt * Gt * Gr * lambda^2 * sigma) ./ ...
+     (((4*%pi)^3) * (R.^4));
+Pr_dB = 10 * log10(Pr);
+Pt_req = (Pr_min * ((4*%pi)^3) .* (R.^4)) ./ ...
+         (Gt * Gr * lambda^2 * sigma);
+Pt_dB = 10 * log10(Pt_req);
+scf(1);
+plot(R/1000, Pr_dB, 'b');
+xlabel('Range (km)');
+ylabel('Received Power P_r (dB)');
+title('Received Power vs Range');
+xgrid();
+scf(2);
+plot(R/1000, Pt_dB, 'r');
+xlabel('Range (km)');
+ylabel('Required Transmitted Power P_t (dB)');
+title('Transmitted Power vs Range');
+xgrid();
+disp("Frequency (GHz) = " + string(f/1e9));
+disp("Wavelength (m) = " + string(lambda));
+disp("Gt = " + string(Gt_dB) + " dB");
+disp("Gr = " + string(Gr_dB) + " dB");
 
 ```
 ## Output
+<img width="1918" height="1110" alt="image" src="https://github.com/user-attachments/assets/9d0c152a-8f1a-4226-9d25-2c7d593c64ae" />
 
+<img width="1918" height="1116" alt="Screenshot 2026-06-04 174920" src="https://github.com/user-attachments/assets/25887153-fa04-4a2f-aec9-ffd93b992567" />
 
 ## Manual Calculation
+<img width="1334" height="800" alt="WhatsApp Image 2026-06-04 at 5 52 28 PM" src="https://github.com/user-attachments/assets/e79ff5e5-6d47-486b-a761-9c11d23fc847" />
 
 ## Result
 Thus, the maximum range of a radar system calculated using the Radar Range Equation is successfully verified using Scilab programming.
